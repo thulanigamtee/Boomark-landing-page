@@ -1,0 +1,25 @@
+@import "../../App.scss";
+.footer {
+  @include flex(column, center);
+  gap: 40px;
+  padding: 40px 10%;
+  background-color: $veryDarkBlue;
+  &__links {
+    @include flex(column, center);
+    gap: 40px;
+    a {
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+  &__icons {
+    @include flex(row, center);
+    gap: 0 40px;
+  }
+  @media (min-width: 768px) {
+    @include flex(row, space-between);
+    &__links {
+      @include flex(row, flex-start);
+    }
+  }
+}

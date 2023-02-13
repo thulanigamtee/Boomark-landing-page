@@ -1,0 +1,121 @@
+@import "../../App.scss";
+.features {
+  text-align: center;
+  margin-top: 160px;
+  padding: 0 10%;
+  &__header {
+    @include flex(column, center);
+    gap: 20px 0;
+    p {
+      max-width: 500px;
+    }
+  }
+  &__main {
+    &__navigation {
+      @include flex(column, center);
+      gap: 40px 0;
+      margin-top: 40px;
+      button {
+        text-transform: capitalize;
+        color: $grayishBlue;
+        &::after {
+          content: "";
+          width: 80vw;
+          height: 1px;
+          background-color: hsla(229, 8%, 60%, 0.3);
+          transform: translateY(40px);
+          left: 10%;
+          position: absolute;
+        }
+      }
+    }
+    &__info {
+      margin-top: 100px;
+      &::before {
+        content: "";
+        width: 100vw;
+        height: 200px;
+        background-color: $softBlue;
+        transform: translateY(30px);
+        position: absolute;
+        left: -25%;
+        z-index: -1;
+        border-radius: 0 100px 100px 0;
+      }
+      &__image {
+        width: 80vw;
+        max-width: 400px;
+      }
+      &__details {
+        @include flex(column, center);
+        gap: 15px 0;
+        margin-top: 80px;
+        button {
+          display: none;
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    text-align: center;
+    &__main {
+      &__navigation {
+        @include flex(row, center);
+        gap: 0 80px;
+        button {
+          &::after {
+            display: none;
+          }
+        }
+      }
+      &__info {
+        @include flex(row, space-between);
+        gap: 0 10%;
+        text-align: left;
+        &::before {
+          content: "";
+          width: 60vw;
+          height: 200px;
+          background-color: $softBlue;
+          transform: translateY(30px);
+          position: absolute;
+          left: -25%;
+          z-index: -1;
+          border-radius: 0 100px 100px 0;
+        }
+        &__image {
+          width: 40vw;
+          max-width: 500px;
+        }
+        &__details {
+          align-items: flex-start;
+          max-width: 400px;
+          button {
+            @include btn($softBlue);
+            display: block;
+            text-transform: capitalize;
+            padding: 15px 20px;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    &__main {
+      margin-top: 100px;
+      &__info {
+        &::before {
+          content: "";
+          width: 60vw;
+          height: 300px;
+          background-color: $softBlue;
+          transform: translateY(80px);
+          position: absolute;
+          left: -25%;
+          z-index: -1;
+          border-radius: 0 100px 100px 0;
+        }
+      }
+    }
+  }
+}

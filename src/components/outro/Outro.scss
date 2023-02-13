@@ -1,0 +1,58 @@
+@import "../../App.scss";
+
+.outro {
+  background-color: $softBlue;
+  padding: 100px 10%;
+  margin-top: 100px;
+  text-align: center;
+  &__info {
+    p {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      color: #fff;
+    }
+    h2 {
+      color: #fff;
+      padding: 10px 0 30px 0;
+    }
+  }
+  &__form {
+    @include flex(column, center);
+    gap: 20px 0;
+    input {
+      border: none;
+      padding: 15px 20px;
+      color: $grayishBlue;
+      border-radius: 5px;
+      width: 80vw;
+    }
+    button {
+      @include btn($softRed);
+      width: 80vw;
+      padding: 15px 20px;
+    }
+  }
+  @media (min-width: 768px) {
+    margin-top: 200px;
+    padding: 60px 10%;
+    &__info {
+      max-width: 380px;
+      margin: auto;
+      h2 {
+        padding: 20px 0 40px 0;
+      }
+    }
+    &__form {
+      @include flex(row, center);
+      gap: 0 20px;
+      input {
+        width: 30vw;
+        max-width: 400px;
+      }
+      button {
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: auto;
+  font-family: "Rubik", sans-serif;
+}
+
+// colors
+$softBlue: hsl(231, 69%, 60%);
+$softRed: hsl(0, 94%, 66%);
+$grayishBlue: hsl(229, 8%, 60%);
+$veryDarkBlue: hsl(229, 31%, 21%);
+
+// mixins
+@mixin flex($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin btn($background) {
+  background-color: $background;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+
+p {
+  font-size: 16px;
+  color: $grayishBlue;
+  line-height: 25px;
+}
+
+h1 {
+  font-size: 28px;
+  color: $veryDarkBlue;
+}
+
+h2 {
+  font-size: 24px;
+  color: $veryDarkBlue;
+}
+
+h3 {
+  color: $veryDarkBlue;
+}
+
+a {
+  font-size: 14px;
+  font-family: "Rubik", sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+}

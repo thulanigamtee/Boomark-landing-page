@@ -1,0 +1,56 @@
+@import "../../App.scss";
+.download {
+  margin-top: 150px;
+  text-align: center;
+  padding: 0 10%;
+  &__header {
+    @include flex(column, center);
+    gap: 20px 0;
+  }
+  &__main {
+    @include flex(row, center);
+    flex-wrap: wrap;
+    gap: 60px 20px;
+    margin-top: 80px;
+    &__chrome,
+    &__firefox,
+    &__opera {
+      width: 280px;
+      box-shadow: 0 8px 20px 0 hsla(229, 8%, 60%, 0.2);
+      background-image: url("../../assets/images/bg-dots.svg");
+      background-repeat: no-repeat;
+      background-position: bottom 95px center;
+      padding: 30px 25px 25px 25px;
+      border-radius: 0 0 15px 15px;
+      h3 {
+        margin: 30px 0 10px 0;
+      }
+      p {
+        margin-bottom: 60px;
+      }
+      button {
+        @include btn($softBlue);
+        padding: 15px 25px;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    margin-top: 200px;
+    &__header {
+      max-width: 500px;
+      margin: auto;
+    }
+  }
+  @media (min-width: 1024px) {
+    &__main {
+      flex-wrap: nowrap;
+      gap: 60px 40px;
+      &__firefox {
+        transform: translateY(40px);
+      }
+      &__opera {
+        transform: translateY(80px);
+      }
+    }
+  }
+}

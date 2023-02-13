@@ -1,0 +1,100 @@
+@import "../../App.scss";
+.intro {
+  @include flex(column, center);
+  gap: 60px 0;
+  padding: 0 5%;
+  text-align: center;
+  margin-top: 40px;
+  &__hero {
+    img {
+      width: 90vw;
+      max-width: 540px;
+    }
+    &::before {
+      content: "";
+      width: 100vw;
+      height: 200px;
+      background-color: $softBlue;
+      transform: translateY(50px);
+      position: absolute;
+      right: -20%;
+      z-index: -1;
+      border-radius: 100px 0 0 100px;
+    }
+  }
+  &__info {
+    @include flex(column, center);
+    gap: 20px;
+    h1 {
+      color: $veryDarkBlue;
+      text-transform: capitalize;
+    }
+    p {
+      color: $grayishBlue;
+    }
+    &__btns {
+      @include flex(row, center);
+      gap: 20px;
+      &__chrome {
+        @include btn($softBlue);
+        padding: 15px;
+      }
+      &__firefox {
+        @include btn(hsla(229, 8%, 60%, 0.1));
+        box-shadow: 0 2px 5px 0 $grayishBlue;
+        color: $veryDarkBlue;
+        padding: 15px;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    @include flex(row-reverse, space-between);
+    gap: 20px 0;
+    padding: 0 5% 0 10%;
+    text-align: left;
+    margin-top: 60px;
+    &__hero {
+      img {
+        width: clamp(360px, 40vw, 600px);
+      }
+      &::before {
+        content: "";
+        width: 60vw;
+        height: 200px;
+        background-color: $softBlue;
+        transform: translateY(80px);
+        position: absolute;
+        right: -25%;
+        z-index: -1;
+        border-radius: 100px 0 0 100px;
+      }
+    }
+    &__info {
+      align-items: flex-start;
+      max-width: 500px;
+      padding: 0;
+    }
+  }
+  @media (min-width: 1024px) {
+    &__info {
+      h1 {
+        font-size: 38px;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    &__hero {
+      &::before {
+        content: "";
+        width: 60vw;
+        height: 300px;
+        background-color: $softBlue;
+        transform: translateY(100px);
+        position: absolute;
+        right: -25%;
+        z-index: -1;
+        border-radius: 100px 0 0 100px;
+      }
+    }
+  }
+}

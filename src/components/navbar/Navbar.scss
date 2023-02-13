@@ -1,0 +1,98 @@
+@import "../../App.scss";
+.nav {
+  @include flex(row, space-between);
+  padding: 40px 10%;
+  &__mobile {
+    display: none;
+    &.active {
+      @include flex(row, space-between);
+      background-color: $veryDarkBlue;
+      position: absolute;
+      min-width: 100vw;
+      left: 0;
+      top: 0;
+      padding: 40px 10%;
+    }
+  }
+  &__links {
+    display: none;
+    &.active {
+      @extend .nav__mobile;
+      @include flex(column, flex-start);
+      gap: 40px 0;
+      padding-top: 40px;
+      top: 80px;
+      min-height: 100vh;
+    }
+    a {
+      color: #fff;
+      text-transform: uppercase;
+      &::before {
+        content: "";
+        width: 80vw;
+        height: 1px;
+        background-color: hsla(0, 0%, 100%, 0.1);
+        transform: translateY(-20px);
+        left: 10%;
+        position: absolute;
+      }
+    }
+    button {
+      @include btn(transparent);
+      width: 80vw;
+      padding: 10px 0px;
+      border: 2px solid #fff;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      &::before {
+        content: "";
+        width: 80vw;
+        height: 1px;
+        background-color: hsla(0, 0%, 100%, 0.1);
+        transform: translateY(-30px);
+        left: 10%;
+        position: absolute;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    @include flex(row, space-between);
+    padding: 40px 10%;
+    &__mobile {
+      &.active {
+        display: none;
+      }
+    }
+    &__links {
+      @include flex(row, space-between);
+      gap: 40px;
+      &.active {
+        @include flex(row, space-between);
+        gap: 40px;
+        background: none;
+        min-height: 0;
+        min-width: 0;
+        padding: 0;
+        top: auto;
+        left: auto;
+        right: 10%;
+        &::before {
+          display: none;
+        }
+      }
+      a {
+        color: $veryDarkBlue;
+      }
+      button {
+        background-color: $softRed;
+        border: none;
+        width: auto;
+        letter-spacing: 2px;
+        padding: 10px 30px;
+      }
+    }
+    &__hamburger {
+      display: none;
+    }
+  }
+}
