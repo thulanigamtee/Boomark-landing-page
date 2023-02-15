@@ -21,6 +21,7 @@
     &__second,
     &__third,
     &__fourth {
+      @include underline(hsla(229, 8%, 60%, 0.3), 20px);
       &__question {
         @include flex(row, space-between);
         width: 80vw;
@@ -31,22 +32,20 @@
         }
       }
       &__answer {
+        transition: opacity 200ms, display 200ms;
         display: none;
+        opacity: 0;
         margin-top: 20px;
         max-width: 500px;
         &.active {
           display: block;
+          opacity: 1;
         }
       }
       &::after {
-        content: "";
-        width: 80vw;
         max-width: 500px;
-        height: 1px;
-        background-color: hsla(229, 8%, 60%, 0.3);
         transform: translate(-50%, 20px);
         left: 50%;
-        position: absolute;
       }
     }
   }

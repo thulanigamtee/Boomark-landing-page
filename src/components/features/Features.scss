@@ -16,31 +16,26 @@
       gap: 40px 0;
       margin-top: 40px;
       button {
+        @include underline(hsla(229, 8%, 60%, 0.3), 40px);
+        transition: 0.5s;
         text-transform: capitalize;
         color: $grayishBlue;
-        &::after {
-          content: "";
-          width: 80vw;
-          height: 1px;
-          background-color: hsla(229, 8%, 60%, 0.3);
-          transform: translateY(40px);
-          left: 10%;
-          position: absolute;
+        &:hover {
+          color: $softRed;
+        }
+        &.active {
+          color: $veryDarkBlue;
+          box-shadow: 0 20px 0 0 #fff, 0 24px 0 0 $softRed;
+          transition: 0.5s;
         }
       }
     }
     &__info {
       margin-top: 100px;
+      @include bgShape(80vw, 200px, 30px);
       &::before {
-        content: "";
-        width: 100vw;
-        height: 200px;
-        background-color: $softBlue;
-        transform: translateY(30px);
-        position: absolute;
-        left: -25%;
-        z-index: -1;
         border-radius: 0 100px 100px 0;
+        left: -10%;
       }
       &__image {
         width: 80vw;
@@ -62,6 +57,7 @@
       &__navigation {
         @include flex(row, center);
         gap: 0 80px;
+        // box-shadow: 0 24px 0 0 #fff, 0 25px 0 0 hsla(229, 8%, 60%, 0.3);
         button {
           &::after {
             display: none;
@@ -70,18 +66,12 @@
       }
       &__info {
         @include flex(row, space-between);
+        @include bgShape(40vw, 200px, 30px);
         gap: 0 10%;
         text-align: left;
         &::before {
-          content: "";
-          width: 60vw;
-          height: 200px;
-          background-color: $softBlue;
-          transform: translateY(30px);
-          position: absolute;
-          left: -25%;
-          z-index: -1;
           border-radius: 0 100px 100px 0;
+          left: -10%;
         }
         &__image {
           width: 40vw;
@@ -104,16 +94,10 @@
     &__main {
       margin-top: 100px;
       &__info {
+        @include bgShape(40vw, 300px, 80px);
         &::before {
-          content: "";
-          width: 60vw;
-          height: 300px;
-          background-color: $softBlue;
-          transform: translateY(80px);
-          position: absolute;
-          left: -25%;
-          z-index: -1;
           border-radius: 0 100px 100px 0;
+          left: 0;
         }
       }
     }

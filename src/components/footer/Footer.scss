@@ -10,11 +10,19 @@
     a {
       color: #fff;
       text-transform: uppercase;
+      &:hover {
+        color: $softRed;
+      }
     }
   }
   &__icons {
     @include flex(row, center);
     gap: 0 40px;
+    button {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
   @media (min-width: 768px) {
     @include flex(row, space-between);

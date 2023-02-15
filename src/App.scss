@@ -35,6 +35,37 @@ $veryDarkBlue: hsl(229, 31%, 21%);
   border-radius: 5px;
   color: #fff;
   white-space: nowrap;
+  &:hover {
+    background-color: transparent;
+    box-shadow: 0 0 0 2px $background;
+    color: $background;
+  }
+}
+
+@mixin bgShape($width, $height, $transY) {
+  &::before {
+    content: "";
+    width: $width;
+    height: $height;
+    background-color: $softBlue;
+    transform: translateY($transY);
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    border-radius: 100px 0 0 100px;
+  }
+}
+
+@mixin underline($color, $transY) {
+  &::after {
+    content: "";
+    width: 80vw;
+    height: 1px;
+    background-color: $color;
+    transform: translateY($transY);
+    left: 10%;
+    position: absolute;
+  }
 }
 
 button {
@@ -71,4 +102,7 @@ a {
   font-family: "Rubik", sans-serif;
   letter-spacing: 2px;
   cursor: pointer;
+  &:hover {
+    color: $softRed;
+  }
 }

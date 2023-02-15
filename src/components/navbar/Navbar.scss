@@ -25,33 +25,21 @@
       min-height: 100vh;
     }
     a {
+      @include underline(hsla(0, 0%, 100%, 0.1), -20px);
       color: #fff;
       text-transform: uppercase;
-      &::before {
-        content: "";
-        width: 80vw;
-        height: 1px;
-        background-color: hsla(0, 0%, 100%, 0.1);
-        transform: translateY(-20px);
-        left: 10%;
-        position: absolute;
-      }
     }
     button {
+      @include underline(hsla(0, 0%, 100%, 0.1), -30px);
       @include btn(transparent);
       width: 80vw;
       padding: 10px 0px;
       border: 2px solid #fff;
       text-transform: uppercase;
       letter-spacing: 5px;
-      &::before {
-        content: "";
-        width: 80vw;
-        height: 1px;
-        background-color: hsla(0, 0%, 100%, 0.1);
-        transform: translateY(-30px);
-        left: 10%;
-        position: absolute;
+      &:hover {
+        background-color: #fff;
+        color: $veryDarkBlue;
       }
     }
   }
@@ -65,7 +53,7 @@
     }
     &__links {
       @include flex(row, space-between);
-      gap: 40px;
+      gap: 30px;
       &.active {
         @include flex(row, space-between);
         gap: 40px;
@@ -89,6 +77,10 @@
         width: auto;
         letter-spacing: 2px;
         padding: 10px 30px;
+        &:hover {
+          box-shadow: 0 0 0 2px $softRed;
+          color: $softRed;
+        }
       }
     }
     &__hamburger {

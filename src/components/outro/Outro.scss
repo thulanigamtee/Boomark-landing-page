@@ -31,6 +31,9 @@
       @include btn($softRed);
       width: 80vw;
       padding: 15px 20px;
+      &:hover {
+        background-color: #fff;
+      }
     }
   }
   @media (min-width: 768px) {

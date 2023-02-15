@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import illustration1 from "../../assets/images/illustration-features-tab-1.svg";
 import illustration2 from "../../assets/images/illustration-features-tab-2.svg";
 import illustration3 from "../../assets/images/illustration-features-tab-3.svg";
@@ -21,8 +21,22 @@ const Features = () => {
     "  Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
   ];
 
+  useEffect(() => {
+    let feature = document.querySelectorAll(
+      ".features__main__navigation > button"
+    );
+    feature[0].classList.add("active");
+  }, []);
+
   const switchTabs = (index) => {
     setInfoIndex(index);
+    let feature = document.querySelectorAll(
+      ".features__main__navigation > button"
+    );
+    for (let i = 0; i < feature.length; i++) {
+      feature[i].classList.remove("active");
+    }
+    feature[index].classList.add("active");
   };
 
   return (
