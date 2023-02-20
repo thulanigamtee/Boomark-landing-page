@@ -1,13 +1,13 @@
 @import "../../App.scss";
 .faq {
   @include flex(column, center);
-  margin-top: 150px;
+  margin-top: 9.375rem;
   padding: 0 10%;
   &__header {
     @include flex(column, center);
     text-align: center;
-    gap: 20px 0;
-    max-width: 500px;
+    gap: 1.25rem 0;
+    max-width: 31.25rem;
     margin: auto;
     h2 {
       text-transform: capitalize;
@@ -15,46 +15,46 @@
   }
   &__main {
     @include flex(column, flex-start);
-    gap: 40px 0;
-    margin-top: 60px;
+    gap: 2.5rem 0;
+    margin-top: 3.75rem;
     &__first,
     &__second,
     &__third,
     &__fourth {
-      @include underline(hsla(229, 8%, 60%, 0.3), 20px);
+      @include underline(hsla(229, 8%, 60%, 0.3), 1.25rem);
       &__question {
         @include flex(row, space-between);
         width: 80vw;
-        max-width: 500px;
+        max-width: 31.25rem;
         p {
           color: $veryDarkBlue;
-          font-size: 15px;
+          font-size: 0.9375rem;
         }
       }
       &__answer {
         transition: opacity 200ms, display 200ms;
         display: none;
         opacity: 0;
-        margin-top: 20px;
-        max-width: 500px;
+        margin-top: 1.25rem;
+        max-width: 31.25rem;
         &.active {
           display: block;
           opacity: 1;
         }
       }
       &::after {
-        max-width: 500px;
-        transform: translate(-50%, 20px);
+        max-width: 31.25rem;
+        transform: translate(-50%, 1.25rem);
         left: 50%;
       }
     }
   }
   &__btn {
     @include btn($softBlue);
-    margin-top: 80px;
-    padding: 15px 20px;
+    margin-top: 5rem;
+    padding: 0.9375rem 1.25rem;
   }
-  @media (min-width: 1024px) {
-    margin-top: 300px;
+  @media (min-width: 64rem) {
+    margin-top: 18.75rem;
   }
 }

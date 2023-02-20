@@ -8,8 +8,8 @@
 }
 
 body {
-  min-width: 320px;
-  max-width: 1440px;
+  min-width: 20rem;
+  max-width: 90rem;
   min-height: 100vh;
   margin: auto;
   font-family: "Rubik", sans-serif;
@@ -31,13 +31,13 @@ $veryDarkBlue: hsl(229, 31%, 21%);
 
 @mixin btn($background) {
   background-color: $background;
-  padding: 15px;
-  border-radius: 5px;
+  padding: 0.9375rem;
+  border-radius: 0.3125rem;
   color: #fff;
   white-space: nowrap;
   &:hover {
     background-color: transparent;
-    box-shadow: 0 0 0 2px $background;
+    box-shadow: 0 0 0 0.125rem $background;
     color: $background;
   }
 }
@@ -52,7 +52,7 @@ $veryDarkBlue: hsl(229, 31%, 21%);
     position: absolute;
     right: 0;
     z-index: -1;
-    border-radius: 100px 0 0 100px;
+    border-radius: 6.25rem 0 0 6.25rem;
   }
 }
 
@@ -60,7 +60,7 @@ $veryDarkBlue: hsl(229, 31%, 21%);
   &::after {
     content: "";
     width: 80vw;
-    height: 1px;
+    height: 0.0625rem;
     background-color: $color;
     transform: translateY($transY);
     left: 10%;
@@ -71,25 +71,25 @@ $veryDarkBlue: hsl(229, 31%, 21%);
 button {
   background: none;
   border: none;
-  font-size: 14px;
+  font-size: 0.875rem;
   cursor: pointer;
   font-family: "Rubik", sans-serif;
   font-weight: 500;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
   color: $grayishBlue;
-  line-height: 25px;
+  line-height: 1.5625rem;
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 1.75rem;
   color: $veryDarkBlue;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: $veryDarkBlue;
 }
 
@@ -98,9 +98,9 @@ h3 {
 }
 
 a {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: "Rubik", sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
   cursor: pointer;
   &:hover {
     color: $softRed;

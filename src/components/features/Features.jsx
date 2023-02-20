@@ -3,6 +3,8 @@ import illustration1 from "../../assets/images/illustration-features-tab-1.svg";
 import illustration2 from "../../assets/images/illustration-features-tab-2.svg";
 import illustration3 from "../../assets/images/illustration-features-tab-3.svg";
 import "./Features.scss";
+// import { motion } from "framer-motion";
+import "animate.css";
 
 const Features = () => {
   const [infoIndex, setInfoIndex] = useState(0);
@@ -37,6 +39,17 @@ const Features = () => {
       feature[i].classList.remove("active");
     }
     feature[index].classList.add("active");
+    let info = document.querySelectorAll(
+      ".features__main__info__image, .features__main__info__details"
+    );
+    for (let i = 0; i < info.length; i++) {
+      info[i].classList.add("active");
+    }
+    setTimeout(() => {
+      for (let i = 0; i < info.length; i++) {
+        info[i].classList.remove("active");
+      }
+    }, 1000);
   };
 
   return (
